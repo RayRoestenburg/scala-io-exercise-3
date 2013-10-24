@@ -16,6 +16,8 @@ object ReverseActor {
   //TODO add Init message which the ReverseActor sends to itself once
   // the ReverseFunction is available.
   case object Init
+
+  //TODO add NotInitialized message to indicate the ReverseActor is not ready yet
   case object NotInitialized
 }
 
