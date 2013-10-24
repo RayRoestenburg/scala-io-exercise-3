@@ -7,7 +7,7 @@ In the previous exercise we ended up with a **Receptionist** that could be unit 
 
 But we have a problem. Obviously we're not making any money with calling **String.reverse**! It's time to bring in a shiny new non-blocking async library to do the work for us.  
 
-In this exercise we (will stretch our imagination and) use a powerful async client library for reversing strings that is just off the charts! The code now has a ReverserFactory which can load an AsyncReverseFunction (which is a type alias for type String => Future[String]) which can be used by the ReverseActor.
+In this exercise we (will stretch our imagination even further and) use a powerful async client library for reversing strings that is just off the charts! The code now has a ReverserFactory which can load an AsyncReverseFunction (which is a type alias for type String => Future[String]) which can be used by the ReverseActor.
 
 ###Objective
 
