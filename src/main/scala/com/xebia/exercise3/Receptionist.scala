@@ -6,6 +6,8 @@ import spray.httpx.SprayJsonSupport._
 import scala.concurrent.ExecutionContext
 import akka.actor.{Props, ActorRef}
 import akka.util.Timeout
+import spray.http.StatusCodes
+import scala.util.{Failure, Success}
 
 trait Receptionist extends HttpServiceActor
                       with ReverseRoute
@@ -35,13 +37,14 @@ trait ReverseRoute extends HttpService {
 
         import ReverseActor._
 
-        val futureResponse = reverseActor.ask(Reverse(request.value))
-                                         .map {
-                                           case PalindromeResult => ReverseResponse(request.value, true)
-                                           case ReverseResult(value) => ReverseResponse(value, false)
-                                         }
+        val futureResponse = reverseActor.ask(Reverse(request.value)).mapTo[Result]
 
-        complete(futureResponse)
+        onComplete(futureResponse) {
+          case Success(PalindromeResult) => complete(ReverseResponse(request.value, true))
+          case Success(ReverseResult(value)) => complete(ReverseResponse(value, false))
+          case Success(NotInitialized) => complete(StatusCodes.ServiceUnavailable)
+          case Failure(e) => complete(StatusCodes.InternalServerError)
+        }
       }
     }
   }
