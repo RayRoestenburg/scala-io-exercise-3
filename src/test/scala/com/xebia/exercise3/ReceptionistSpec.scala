@@ -12,12 +12,12 @@ class ReceptionistSpec extends Specification with Specs2RouteTest {
 
   trait TestCreationSupport extends CreationSupport {
     def createChild(props: Props, name: String): ActorRef = system.actorOf(Props[FakeReverseActor], "fakereverse")
-
     def getChild(name: String): Option[ActorRef] = None
   }
 
   val subject = new ReverseRoute with TestCreationSupport {
     implicit def actorRefFactory: ActorRefFactory = system
+    implicit def executionContext = system.dispatcher
   }
 
   "The Receptionist" should {
