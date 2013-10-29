@@ -1,13 +1,15 @@
-package com.xebia.exercise3
+package com.xebia
+package exercise3
 
-import spray.routing._
-
-import spray.httpx.SprayJsonSupport._
 import scala.concurrent.ExecutionContext
+import scala.util.{Failure, Success}
+
 import akka.actor.{Props, ActorRef}
 import akka.util.Timeout
+
 import spray.http.StatusCodes
-import scala.util.{Failure, Success}
+import spray.httpx.SprayJsonSupport._
+import spray.routing._
 
 trait Receptionist extends HttpServiceActor
                       with ReverseRoute

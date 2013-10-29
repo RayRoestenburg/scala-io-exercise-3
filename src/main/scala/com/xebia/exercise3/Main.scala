@@ -2,12 +2,13 @@ package com.xebia.exercise3
 
 import akka.actor.{Props, ActorSystem}
 import akka.io.IO
+
 import spray.can.Http
 import spray.can.Http.Bind
 
 object Main extends App {
 
-  implicit val system = ActorSystem("exercise-1")
+  implicit val system = ActorSystem("exercise-3")
 
   class TheReceptionist extends Receptionist with ActorContextCreationSupport
 
