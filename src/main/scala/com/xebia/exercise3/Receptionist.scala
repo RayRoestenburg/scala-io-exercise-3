@@ -1,4 +1,5 @@
-package com.xebia.exercise3
+package com.xebia
+package exercise3
 
 import scala.concurrent.ExecutionContext
 import scala.concurrent.duration._
@@ -17,8 +18,8 @@ trait Receptionist extends HttpServiceActor
   implicit def executionContext = context.dispatcher
 
   def receive = runRoute(reverseRoute)
-
 }
+
 
 trait ReverseRoute extends HttpService with CreationSupport {
   import ReverseActor._

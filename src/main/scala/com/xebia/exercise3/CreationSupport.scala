@@ -1,9 +1,9 @@
-package com.xebia.exercise3
+package com.xebia
+package exercise3
 
 import akka.actor.{ActorContext, ActorRef, Props}
 
 trait CreationSupport {
-
   def getChild(name:String):Option[ActorRef]
   def createChild(props:Props, name:String):ActorRef
   def getOrCreateChild(props:Props, name:String):ActorRef = getChild(name).getOrElse(createChild(props, name))

@@ -1,15 +1,19 @@
-package com.xebia.exercise3
+package com.xebia
+package exercise3
 
-import akka.actor.{Actor, Props}
-import com.xebia.exercise3.ReverserFactory.AsyncReverseFunction
 import scala.concurrent.duration._
 import scala.util.{Success, Failure}
+
+import akka.actor.{Actor, Props}
+
+import ReverserFactory.AsyncReverseFunction
 
 object ReverseActor {
   def props = Props[ReverseActor]
   def name = "reverser"
 
   sealed trait Result
+
   case class Reverse(value:String)
 
   case class ReverseResult(value:String) extends Result

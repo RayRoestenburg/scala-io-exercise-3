@@ -1,14 +1,16 @@
-package com.xebia.exercise3
-
-import spray.testkit.Specs2RouteTest
-import org.specs2.mutable.Specification
-
-import spray.http.StatusCodes
-import spray.httpx.SprayJsonSupport._
+package com.xebia
+package exercise3
 
 import akka.actor.{Actor, Props, ActorRef, ActorRefFactory}
 
-class ReceptionistSpec extends Specification with Specs2RouteTest {
+import spray.http.StatusCodes
+import spray.httpx.SprayJsonSupport._
+import spray.testkit.Specs2RouteTest
+
+import org.specs2.mutable.Specification
+
+class ReceptionistSpec extends Specification
+                          with Specs2RouteTest {
 
   trait TestCreationSupport extends CreationSupport {
     def createChild(props: Props, name: String): ActorRef = system.actorOf(Props[FakeReverseActor], "fakereverse")
