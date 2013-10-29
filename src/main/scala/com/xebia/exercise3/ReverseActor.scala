@@ -32,7 +32,9 @@ class ReverseActor extends Actor {
 
   // TODO the receive method should be set to the uninitialized Receive function
 
-  def receive =
+  def receive:Receive = {
+
+  }
 
   // TODO create an uninitialized Receive method
   // Send back NotInitialized on a Reverse message.
