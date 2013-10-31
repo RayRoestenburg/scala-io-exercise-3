@@ -40,7 +40,10 @@ Load the AsyncReverseFunction using the ReverserFactory on receiving Init. Once 
 
 Implement the initialized Receive function, call the AsyncReverseFunction, on completion of the Future send back to a **captured sender** (do not close over sender but create a val which contains the sender at the time of receiving the Reverse message).
 
+###Next Exercise
 
+In the next exercise you'll learn how to write a custom Akka extension for configuration purposes.
+Go to [Exercise 4](https://github.com/RayRoestenburg/scala-io-exercise-4)
 
 
 
