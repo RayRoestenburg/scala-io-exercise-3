@@ -10,9 +10,7 @@ object Main extends App {
 
   implicit val system = ActorSystem("exercise-3")
 
-  class TheReceptionist extends Receptionist with ActorContextCreationSupport
-
-  val receptionist = system.actorOf(Props[TheReceptionist], "receptionist")
+  val receptionist = system.actorOf(Props[Receptionist], "receptionist")
 
   IO(Http) ! Bind(listener= receptionist, interface = "0.0.0.0", port=8000)
 }

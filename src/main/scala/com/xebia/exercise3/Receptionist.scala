@@ -11,7 +11,7 @@ import spray.http.StatusCodes
 import spray.httpx.SprayJsonSupport._
 import spray.routing._
 
-trait Receptionist extends HttpServiceActor
+class Receptionist extends HttpServiceActor
                       with ReverseRoute
                       with CreationSupport {
 
