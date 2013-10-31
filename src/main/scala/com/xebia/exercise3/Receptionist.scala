@@ -12,7 +12,7 @@ import spray.routing._
 import spray.httpx.SprayJsonSupport._
 import spray.http.StatusCodes
 
-trait Receptionist extends HttpServiceActor
+class Receptionist extends HttpServiceActor
                       with ReverseRoute
                       with ActorContextCreationSupport {
   implicit def executionContext = context.dispatcher
