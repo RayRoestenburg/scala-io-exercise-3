@@ -13,7 +13,7 @@ import spray.routing._
 
 class Receptionist extends HttpServiceActor
                       with ReverseRoute
-                      with CreationSupport {
+                      with ActorContextCreationSupport {
 
   import ReverseActor._
 
