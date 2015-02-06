@@ -1,7 +1,7 @@
 Exercise 3
 ==========
 
-In this exercise we continue with the end result of [exercise 2](http://github/RayRoestenburg/scala-io-exercise-2).
+In this exercise we continue with the end result of [exercise 2](https://github.com/RayRoestenburg/scala-io-exercise-2).
 
 In the previous exercise we ended up with a **Receptionist** that could be unit tested with a FakeReverseActor.
 
